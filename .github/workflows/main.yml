@@ -9,12 +9,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        with:
-          path: tests
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          path: tests
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{  secrets.CYPRESS_RECORD_KEY  }}
